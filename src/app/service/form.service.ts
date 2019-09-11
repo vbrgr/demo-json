@@ -13,13 +13,13 @@ formd: FieldConfig[];
               private readonly fb: FormBuilder) { }
 
   public getForm() {
-    return this.http.get('http://localhost:3000/form');
+    return this.http.get('https://my-json-server.typicode.com/vbrgr/demo-json/form');
   }
   public getUserForm() {
-    this.http.get('http://localhost:3000/dynamic-form').subscribe((res) => {
+    this.http.get('https://my-json-server.typicode.com/vbrgr/demo-json/dynamic-form').subscribe((res) => {
       this.setFormData(res);
     });
-    return this.http.get<FieldConfig[]>('http://localhost:3000/dynamic-form');
+    return this.http.get<FieldConfig[]>('https://my-json-server.typicode.com/vbrgr/demo-json/dynamic-form');
   }
   public getFormData() {
     return this.formd;
