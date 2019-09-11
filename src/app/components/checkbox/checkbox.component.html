@@ -1,0 +1,6 @@
+<div [formGroup]="group" >
+<div > <label><input [formControlName]="field.name" [class]="field.htmlClass" type="checkbox" value="{{ field.value }}" > {{field.label}} </label></div>
+<ng-container *ngFor="let validation of field.validations;" class="invalid-feedback" >
+     <span class="error-message"  *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</span>
+ </ng-container>
+</div>

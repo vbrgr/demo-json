@@ -1,0 +1,62 @@
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header"> 
+        <!-- The mobile navbar-toggle button can be safely removed since you do not need it in a non-responsive implementation --> 
+        <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Tuebora"/> </a> </div>
+      
+      <!--/.nav-collapse --> 
+    </div>
+  </nav>
+  
+  <!-- Header Part Completed -->
+  
+  <div class="pageHeading">
+    <div class="container-fluid">
+      <div class="left-col">
+        <h2 >Registration Form</h2>
+      </div>
+      <div class="right-col">
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Page Heading Completed -->
+  
+  <div class="container-fluid">
+    <div class="main-container">
+      <div id="wizard" class="changePwd ssoWizard">
+       
+        <div>
+          
+          
+         <div class="newUser">
+        <div class="bigitem noborder">
+          
+         
+          <div class="editProfileForm ssoProfileForm">
+
+<div class="form">
+ 
+    <dynamic-form [fields]="regConfig" (submit)="submit($event)">
+    </dynamic-form>
+    <div class="margin-top">
+      {{ form.value | json }}
+    </div>
+  </div>
+
+
+</div>
+
+          
+         
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+  

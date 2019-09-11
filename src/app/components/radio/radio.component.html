@@ -1,0 +1,10 @@
+<div [formGroup]="group" >
+<label>{{field.label}}</label>
+<div >
+<label *ngFor="let item of field.options"  > 
+<input  type="radio" [class]="field.htmlClass"  [value]="item"  [formControlName]="field.name" [checked]="item === field.value" >{{ item }}</label>
+</div>
+<ng-container *ngFor="let validation of field.validations;"  >
+     <span class="error-message"  *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</span>
+ </ng-container>
+</div>

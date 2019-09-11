@@ -1,0 +1,19 @@
+<div class="wrapper">
+  
+    <div  *ngIf="menutype.position === 'side'">
+  <app-admin-sidebar></app-admin-sidebar>
+    </div>
+  <div class="main-panel">
+    <div  *ngIf="menutype.position === 'top'">
+    <app-admin-header></app-admin-header>
+  </div>
+  
+  <div class="content">
+      <div class="container-fluid">
+          <!--<app-admin-content></app-admin-content>-->
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+  <app-admin-footer></app-admin-footer>
+  </div>
+</div>

@@ -1,0 +1,336 @@
+{
+  "menu": {
+    "name": "Administrator Menu",
+    "description": "Primary & Utility Menu Specifications of administrator",
+    "url": "adminmenus",
+    "id": "administratormenu",
+    "category": [
+      "com:tuebora:ui:menu:admin:resource"
+    ],
+    "properties": {
+      "position": "top",
+      "sideToggle": false
+    },
+    "sections": {
+      "utility": [{
+          "label": "User Preferences",
+          "icon": "tueboraIcon-log-out",
+          "path": "/logout",
+          "id": "com:tuebora:ui:utility:menu:preferences",
+          "target": "_self"
+        },
+        {
+          "label": "Logout",
+          "icon": "tueboraIcon-log-out",
+          "path": "/logout",
+          "id": "com:tuebora:ui:utility:menu:logout",
+          "target": "_self"
+        }
+      ],
+      "primary": [{
+          "label": "Datamodel",
+          "icon": "far fa-object-group",
+          "path": "/resources",
+          "description": "Resource Management",
+          "id": "com:tuebora:ui:menu:datamodel",
+          "target": "_self",
+          "children": []
+        },
+        {
+          "label": "UI Management",
+          "icon": "fab fa-uikit",
+          "path": "/navigation",
+          "id": "com:tuebora:ui:menu:uikits",
+          "target": "_self",
+          "children": [{
+              "label": "Menu Management",
+              "icon": "fas fa-bars",
+              "description": "Manage menu navigation for all Roles",
+              "path": "/menus",
+              "id": "com:tuebora:ui:menu:navigation",
+              "target": "_self",
+              "children": []
+            },
+            {
+              "label": "Page Management",
+              "icon": "tueboraIcon-view-history",
+              "path": "/pages",
+              "description": "Construct new pages based on tabular, chart and custom layouts",
+              "id": "com:tuebora:ui:menu:newpage",
+              "target": "_self",
+              "children": []
+            }
+          ]
+        },
+        {
+          "label": "Workflows",
+          "icon": "fa fa-sitemap",
+          "path": "/views/workflowmanagement",
+          "id": "com:tuebora:ui:menu:workflowmanagement",
+          "description": "Manage your Workflows",
+          "target": "_self",
+          "children": [{
+              "label": "All Workflows",
+              "icon": "",
+              "path": "/workflows",
+              "description": "Manage all of your Workflows",
+              "id": "com:tuebora:ui:menu:workflowmanagement",
+              "target": "_self",
+              "children": []
+            },
+            {
+              "label": "Execution History",
+              "icon": "",
+              "id": "com:tuebora:ui:menu:workflowmanagement:executionhistory",
+              "path": "/execution-history",
+              "description": "Manage the Worfklows which are executed",
+              "target": "_self",
+              "children": []
+            },
+            {
+              "label": "Messages",
+              "icon": "",
+              "id": "com:tuebora:ui:menu:workflowmanagement:messages",
+              "target": "_self",
+              "description": "Manage the Worfklows which are executed",
+              "path": "/messages",
+              "children": []
+            },
+            {
+              "label": "Reusable tasks",
+              "icon": "",
+              "path": "/reusable-tasks",
+              "target": "_self",
+              "description": "Manage the Resubale tasks",
+              "id": "com:tuebora:ui:menu:workflowmanagement:reusabletasks",
+              "children": []
+            },
+            {
+              "label": "Bindings",
+              "icon": "",
+              "path": "/bindings",
+              "target": "_self",
+              "description": "Manage the Worfklows bindings",
+              "id": "com:tuebora:ui:menu:workflowmanagement:bindings",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "form": [{
+    "schema":{
+    "id": "schema_userform",
+    "type":"object",
+    "title":"User Dynamic Form",
+    "properties":{
+    "firstName":{
+    "name":"firstName",
+    "title":"First Name",
+    "type":"string",
+    "min":3,
+    "max":25,
+    "pattern":"/^[a-zA-Z0-9]$/",
+    "validationMessage": [
+    {"required": "We greet by first name"},
+    {"specialChars": "Name should not start or end with Special Characters"}
+    ]
+    },
+    "lastName":{
+    "name":"lastName",
+    "title":"Last Name",
+    "type":"string"
+    },
+    "gender":{
+    "type":"input",
+    "name":"gender",
+    "title":"Gender",
+    "enum":[
+    {"key": "Male", "value": "male"},
+    {"key": "Female", "value": "female"}
+    ]
+    },
+    "mobile":{
+    "name":"mobile",
+    "title":"Contact Number",
+    "type":"integer" ,
+    "min":10,
+    "max":10
+    },
+    "location":{
+      "name":"location",
+      "title":"Location",
+      "type":"string" ,
+      "min":2,
+      "max":10
+      },
+    "email":{
+    "name":"email",
+    "title":"Email Address",
+    "type":"email",
+    "pattern":"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$",
+    "description":"",
+    "validationMessage":"Invalid Email address"
+    },
+    "joiningDate":{
+    "name":"joiningDate",
+    "title":"Joining Date",
+    "description":"",
+    "type":"datetime"
+    },
+    "comment":{
+    "name":"comment",
+    "title":"Comment",
+    "type":"string",
+    "min":64,
+    "max":300
+    }
+    },
+    "required":[
+    "firstName",
+    "email",
+    "mobile",
+    "joiningDate"
+    ]
+    },
+    "form":[
+    {
+    "type":"section",
+    "htmlClass":"row",
+    "items":[
+    {
+    "type":"section",
+    "htmlClass":"col-xs-6",
+    "items":[
+    "firstName",
+    "lastName",
+    "gender", "mobile","location"
+    ]
+    },
+    {
+    "type":"section",
+    "htmlClass":"col-xs-6",
+    "items":[
+    "email",
+    "joiningDate", "comment"
+    ]
+    }
+    ]
+    },
+    {
+    "type":"reset",
+    "htmlClass":"btn btn-default",
+    "title":"Reset"
+    },
+    {
+    "type":"submit",
+    "htmlClass":"btn btn-primary",
+    "title":"Submit"
+    }
+    ]
+    }
+],
+"dynamic-form": [
+  {
+    "type": "input",
+    "label": "Username",
+    "inputType": "text",
+    "name": "name",
+    "htmlClass": "form-control",
+    "validations": [
+      {
+        "name": "required",
+        "validator": "Validators.required",
+        "message": "Name Required"
+      },
+      {
+        "name": "pattern",
+        "validator": "Validators.pattern('^[a-zA-Z]+$')",
+        "message": "Accept only text"
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "label": "Email Address",
+    "inputType": "email",
+    "name": "email",
+    "htmlClass": "form-control",
+    "validations": [
+      {
+        "name": "required",
+        "validator": "Validators.required",
+        "message": "Email Required"
+      },
+      {
+        "name": "pattern",
+        "validator": "Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')",
+        "message": "Invalid email"
+      }
+    ]
+  },
+  {
+    "type": "input",
+    "label": "Password",
+    "inputType": "password",
+    "name": "password",
+    "htmlClass": "form-control",
+    "validations": [
+      {
+        "name": "required",
+        "validator": "Validators.required",
+        "message": "Password Required"
+      }
+    ]
+  },
+  {
+    "type": "radiobutton",
+    "label": "Gender",
+    "name": "gender",
+    "htmlClass": "custom-radio",
+    "options": ["Male", "Female"],
+    "value": "Male"
+  },
+  {
+    "type": "date",
+    "label": "DOB",
+    "name": "dob",
+    "htmlClass": "form-control",
+    "validations": [
+      {
+        "name": "required",
+        "validator": "Validators.required",
+        "message": "Date of Birth Required"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "label": "Country",
+    "name": "country",
+    "htmlClass": "form-control",
+    "value": "UK",
+    "options": ["India", "UAE", "UK", "US"]
+  },
+  {
+    "type": "checkbox",
+    "label": "Accept Terms",
+    "htmlClass": "checkbox",
+    "name": "term",
+    "value": true
+  },
+  {
+    "type": "button",
+    "inputType": "reset",
+    "htmlClass": "btn btn-default",
+    "label": "Reset"
+  },
+  {
+    "type": "button",
+    "inputType": "submit",
+    "htmlClass": "btn btn-primary",
+    "label": "Save"
+  }
+]
+}

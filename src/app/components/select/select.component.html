@@ -1,0 +1,8 @@
+<div [formGroup]="group" >
+  <label > {{field.label}} </label>
+  <select [formControlName]="field.name" [class]="field.htmlClass">
+    <option *ngFor="let item of field.options" [value]="item" >{{ item }}</option></select>
+  <ng-container *ngFor="let validation of field.validations;" class="invalid-feedback" >
+       <span class="error-message"  *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</span>
+   </ng-container>
+  </div>
