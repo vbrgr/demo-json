@@ -10,133 +10,32 @@ import { FormService } from './../service/form.service';
   styleUrls: ['./user-dynamic-form.component.css']
 })
 export class UserDynamicFormComponent implements OnInit {
-  typeArray: [] = [];
-  regConfig: FieldConfig[] = [];
+  typeArray: FieldConfig[];
+  ;
   formdata: {};
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
   constructor(private forms: FormService) {
     this.forms.getForm().subscribe(res => {
+      const main = [];
       this.formdata = res[0].schema.properties;
-      /* res[0].form[0].items.forEach(newkey => {
+      res[0].form[0].items.forEach(newkey => {
         newkey.items.forEach(key => {
-          this.regConfig.push(this.getData(key));
+          const data = this.getData(key);
+          main.push(data);
+        // console.log(data);
         });
+        
       });
-      const index = this.regConfig.indexOf(this.regConfig[0], 0);
-      if (index > -1) {
-        this.regConfig.splice(index, 1);
-      } */
+      localStorage.setItem('jsondata', JSON.stringify(main));
     });
-
-  
-   /*  this.result[0].forEach(element => {
-        console.log(element);
-    }); */
   }
+  regConfig: FieldConfig[] = JSON.parse(localStorage.getItem('jsondata'));
   getData(name) {
     return this.formdata[name];
   }
-
-
- /*  regConfig: FieldConfig[] = [
-    {
-      type: "input",
-      label: "Username",
-      inputType: "text",
-      name: "name",
-      validations: [
-        {
-          name: "required",
-          validator: Validators.required,
-          message: "Name Required"
-        },
-        {
-          name: "pattern",
-          validator: Validators.pattern("^[a-zA-Z]+$"),
-          message: "Accept only text"
-        }
-      ]
-    },
-    {
-      type: "input",
-      label: "Email Address",
-      inputType: "email",
-      name: "email",
-      validations: [
-        {
-          name: "required",
-          validator: Validators.required,
-          message: "Email Required"
-        },
-        {
-          name: "pattern",
-          validator: Validators.pattern(
-            "^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
-          ),
-          message: "Invalid email"
-        }
-      ]
-    },
-    {
-      type: "input",
-      label: "Password",
-      inputType: "password",
-      name: "password",
-      validations: [
-        {
-          name: "required",
-          validator: Validators.required,
-          message: "Password Required"
-        }
-      ]
-    },
-    {
-      type: "radiobutton",
-      label: "Gender",
-      name: "gender",
-      options: ["Male", "Female"],
-      value: "Male"
-    },
-    {
-      type: "date",
-      label: "DOB",
-      name: "dob",
-      validations: [
-        {
-          name: "required",
-          validator: Validators.required,
-          message: "Date of Birth Required"
-        }
-      ]
-    },
-    {
-      type: "select",
-      label: "Country",
-      name: "country",
-      value: "UK",
-      options: ["India", "UAE", "UK", "US"]
-    },
-    {
-      type: "checkbox",
-      label: "Accept Terms",
-      name: "term",
-      value: true
-    },
-    {
-      type: "button",
-      label: "Save"
-    }
-  ]; */
-
-ngOnInit() {
-  this.forms.getUserForm().subscribe(res => {
-    this.regConfig = res;
-    // console.log(res);
-    /* res.forEach(newkey => {
-      this.regConfig.push(newkey);
-    }); */
-  });
-  console.log('test', this.regConfig);
-}
-submit(value: any) {}
+  ngOnInit() {
+  }
+  submit(value: any) {
+    console.log(form.value);
+   }
 }

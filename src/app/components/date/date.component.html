@@ -1,4 +1,4 @@
-<div [formGroup]="group" >
+<div [formGroup]="group"  [class]="field.groupClass">
 <label>{{field.label}} </label>
 <input  [class]="field.htmlClass"  type="datetime-local"  [formControlName]="field.name" [placeholder]="field.label">
 <ng-container *ngFor="let validation of field.validations;"  >

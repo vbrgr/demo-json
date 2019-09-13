@@ -1,13 +1,10 @@
 export interface Validator {
   name: string;
   validator: any;
-  pattren: string;
-  min: any;
-  max: any;
   message: string;
 }
 export interface FieldConfig {
-  disabled?: boolean,
+  disabled?: boolean;
   label?: string;
   name?: string;
   inputType?: string;
@@ -17,4 +14,5 @@ export interface FieldConfig {
   value?: any;
   validations?: Validator[];
   htmlClass?: string;
+  groupClass: string;
 }

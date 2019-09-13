@@ -1676,4 +1676,7 @@ a.actionButtons.noborder .star-ir-side i{    margin-top: 0;}
 .sidebar-mini .main_containt {
     margin-left: 70px;
 }
+.error-message{color: rgb(207, 55, 55)}
+.form-control.ng-invalid.ng-touched{border-color: rgb(207, 55, 55)}
+.form-control.ng-valid.ng-touched{ border-color: rgb(74, 146, 3)}
 

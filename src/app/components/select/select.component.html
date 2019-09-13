@@ -1,4 +1,4 @@
-<div [formGroup]="group" >
+<div [formGroup]="group"  [class]="field.groupClass">
   <label > {{field.label}} </label>
   <select [formControlName]="field.name" [class]="field.htmlClass">
     <option *ngFor="let item of field.options" [value]="item" >{{ item }}</option></select>

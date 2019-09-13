@@ -1,8 +1,8 @@
-<div [formGroup]="group" >
+<div [formGroup]="group" [class]="field.groupClass" >
 <label>{{field.label}}</label>
-<div >
-<label *ngFor="let item of field.options"  > 
-<input  type="radio" [class]="field.htmlClass"  [value]="item"  [formControlName]="field.name" [checked]="item === field.value" >{{ item }}</label>
+<div *ngIf="field.enum">
+<label *ngFor="let item of field.enum"  > 
+<input  type="radio" [class]="field.htmlClass"  [value]="item.value"  [formControlName]="field.name" [checked]="(item.value === field.value)?'checked':''" >{{ item.key }}</label>
 </div>
 <ng-container *ngFor="let validation of field.validations;"  >
      <span class="error-message"  *ngIf="group.get(field.name).hasError(validation.name)">{{validation.message}}</span>

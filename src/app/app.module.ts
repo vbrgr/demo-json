@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +24,7 @@ import { TextareaComponent } from './components/textarea/textarea.component';
 import { DynamicFieldDirective } from './components/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.component';
+import { HeaderNavComponent } from './components/header-nav/header-nav.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.
     TextareaComponent,
     DynamicFieldDirective,
     DynamicFormComponent,
-    UserDynamicFormComponent
+    UserDynamicFormComponent,
+    HeaderNavComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +68,8 @@ import { UserDynamicFormComponent } from './user-dynamic-form/user-dynamic-form.
     DateComponent,
     RadioComponent,
     CheckboxComponent,
-    TextareaComponent
+    TextareaComponent,
+    HeaderNavComponent
   ]
 })
 export class AppModule { }
