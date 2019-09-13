@@ -1,5 +1,4 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
 import { FieldConfig } from '../model/Field.interface';
 import { DynamicFormComponent } from '../components/dynamic-form/dynamic-form.component';
 import { FormService } from './../service/form.service';
@@ -24,7 +23,7 @@ export class UserDynamicFormComponent implements OnInit {
           main.push(data);
         // console.log(data);
         });
-        
+
       });
       localStorage.setItem('jsondata', JSON.stringify(main));
     });
@@ -36,6 +35,5 @@ export class UserDynamicFormComponent implements OnInit {
   ngOnInit() {
   }
   submit(value: any) {
-    console.log(form.value);
    }
 }
