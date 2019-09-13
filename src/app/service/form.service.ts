@@ -13,7 +13,7 @@ formd: FieldConfig[];
               private readonly fb: FormBuilder) { }
 
   public getForm() {
-    return this.http.get('http://localhost:3000/form');
+    return this.http.get('https://my-json-server.typicode.com/vbrgr/demo-json/form');
   }
   public getUserForm() {
     this.http.get('http://localhost:3000/dynamic-form').subscribe((res) => {
