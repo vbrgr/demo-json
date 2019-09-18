@@ -9,8 +9,6 @@ import { FormService } from './../service/form.service';
   styleUrls: ['./user-dynamic-form.component.css']
 })
 export class UserDynamicFormComponent implements OnInit {
-  typeArray: FieldConfig[];
-  ;
   formdata: {};
   @ViewChild(DynamicFormComponent) form: DynamicFormComponent;
   constructor(private forms: FormService) {

@@ -131,7 +131,7 @@
     "label":"First Name",
     "inputType":"text",
     "htmlClass": "form-control",
-    "groupClass": "col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     "type":"input",
     "min":3,
     "max":25,
@@ -165,7 +165,7 @@
     "title":"Last Name",
     "inputType":"text",
     "htmlClass": "form-control",
-    "groupClass": "form-group col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     "type":"input"
     },
     "gender":{
@@ -175,7 +175,7 @@
     "label":"Gender",
     "htmlClass": "",
     "value": "male",
-    "groupClass": "form-group col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     "enum":[
     {"key": "Male", "value": "male"},
     {"key": "Female", "value": "female"}
@@ -188,7 +188,7 @@
     "type":"input" ,
     "inputType":"number",
     "htmlClass": "form-control",
-    "groupClass": "form-group col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     "validations":[
       { "name": "required",
         "validator": true,
@@ -211,7 +211,7 @@
       "type":"input" ,
       "inputType":"text",
       "htmlClass": "form-control",
-      "groupClass": "form-group col-md-6",
+      "groupClass": "form-group col-md-6 col-sm-12",
       "min":2,
       "max":10
       },
@@ -222,7 +222,7 @@
     "type":"input",
     "inputType":"email",
     "htmlClass": "form-control",
-    "groupClass": "form-group col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     
     "description":"",
     "validations":[
@@ -245,7 +245,7 @@
     "title":"Joining Date",
     "label":"Joining Date",
     "htmlClass": "form-control",
-    "groupClass": "form-group col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     "description":"",
     "type":"date",
     "inputType":"local-datetime",
@@ -261,7 +261,7 @@
     "title":"Comment",
     "label":"Comment",
     "htmlClass": "form-control",
-    "groupClass": "form-group col-md-6",
+    "groupClass": "form-group col-md-6 col-sm-12",
     "type":"textarea",
     "validations":[
       { "name": "min",
